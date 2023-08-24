@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>게시판 글 목록</title>
+</head>
+<body>
+<div>
+    <h1>My Board</h1>
+    <h4>게시판에 오신 것을 환영합니다.</h4>
+</div>
+
+<div>
+    <button>
+        글등록
+    </button>
+
+    <div th:each="item : ${boardList}">
+        <div>
+            <div th:text="${item.id}">
+            </div>
+            <div>
+                <h5 th:text="${item.title}"></h5>
+                <p th:text="${item.content}"></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
